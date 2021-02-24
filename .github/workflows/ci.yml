@@ -4,9 +4,9 @@ name: ci cd yaml
 # example master/main/test/prod/ect
 on:
   push:
-    branches: [ maine ]
+    branches: [ main ]
   pull_request:
-    branches: [ maine ]
+    branches: [ main ]
 
 jobs:
 
