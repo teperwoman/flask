@@ -1,4 +1,4 @@
-name: ci cd yaml
+name: ci_cd_yaml
 
 # me dit dans quel branche metre le code
 # example master/main/test/prod/ect
