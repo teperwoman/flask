@@ -37,3 +37,24 @@ spec:
     - protocol: TCP
       port: 5000
       targetPort: 5000
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: flask
+  namespace: flask
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+spec:
+  tls:
+    - hosts:
+        - flask.com
+  rules:
+    - host: flask.com
+      http:
+        paths:
+          - path: /(.*)
+            backend:
+              serviceName: flask
+              servicePort: 5000
